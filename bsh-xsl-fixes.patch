@@ -1,0 +1,34 @@
+diff --git a/docs/faq/faq.xsl b/docs/faq/faq.xsl
+index 44615de..341b435 100644
+--- a/docs/faq/faq.xsl
++++ b/docs/faq/faq.xsl
+@@ -18,7 +18,7 @@
+ <!--xsl:param name="imagedir"/-->
+ 
+ <!-- Output directives -->
+-<xsl:output method="xhtml" indent="yes"/>
++<xsl:output method="html" indent="yes"/>
+ 
+ <!-- 
+ 	Root
+diff --git a/docs/manual/xsl/manual.xsl b/docs/manual/xsl/manual.xsl
+index 3b8208c..d733260 100644
+--- a/docs/manual/xsl/manual.xsl
++++ b/docs/manual/xsl/manual.xsl
+@@ -1,6 +1,6 @@
+ <xsl:stylesheet	
+ 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
+-    xmlns:redirect="org.apache.xalan.xslt.extensions.Redirect"
++        xmlns:redirect="http://xml.apache.org/xalan/redirect"
+     extension-element-prefixes="redirect"
+ >
+ 
+@@ -29,7 +29,7 @@
+ <xsl:param name="pagesdir"/>
+ 
+ <!-- Output directives -->
+-<xsl:output method="xhtml" indent="no"/>
++<xsl:output method="html" indent="no"/>
+ 
+ <!-- 
+ 	Root
