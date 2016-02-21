@@ -34,7 +34,7 @@
 
 Name:           %{?scl_prefix}%{pkg_name}
 Version:        1.3.0
-Release:        29.15%{?dist}
+Release:        29.16%{?dist}
 Epoch:          0
 Summary:        Lightweight Scripting for Java
 License:        (SPL or LGPLv2+) and Public Domain
@@ -77,7 +77,7 @@ results.
 
 %package manual
 Summary:        Manual for %{pkg_name}
-Requires:       maven30-runtime
+Requires:       %{?scl_prefix}runtime
 
 %description manual
 Documentation for %{pkg_name}.
@@ -99,14 +99,14 @@ Demonstrations and samples for %{pkg_name}.
 %package utils
 Summary:        %{pkg_name} utilities
 Requires:       %{name} = %{epoch}:%{version}-%{release}
-Requires:       maven30-jline
+Requires:       %{?scl_prefix}jline
 
 %description utils
 %{pkg_name} utilities.
 
 %prep
 %setup -q -n BeanShell
-%{?scl:scl enable maven30 %{scl} - <<"EOF"}
+%{?scl:scl enable %{scl} - <<"EOF"}
 set -e -x
 %patch0 -p1
 %patch1 -p1
@@ -123,7 +123,7 @@ done
 %{?scl:EOF}
 
 %build
-%{?scl:scl enable maven30 %{scl} - <<"EOF"}
+%{?scl:scl enable %{scl} - <<"EOF"}
 set -e -x
 mkdir -p lib
 pushd lib
@@ -137,7 +137,7 @@ $ant test dist
 %{?scl:EOF}
 
 %install
-%{?scl:scl enable maven30 %{scl} - <<"SCL_EOF"}
+%{?scl:scl enable %{scl} - <<"SCL_EOF"}
 set -e -x
 # jars
 install -d -m 755 $RPM_BUILD_ROOT%{_javadir}
@@ -231,6 +231,9 @@ cat scripts/bshdoc.bsh >> $RPM_BUILD_ROOT%{_bindir}/%{pkg_name}doc
 %attr(0755,root,root) %{_bindir}/%{pkg_name}*
 
 %changelog
+* Mon Jan 11 2016 Michal Srb <msrb@redhat.com> - 0:1.3.0-29.16
+- maven33 rebuild #2
+
 * Sat Jan 09 2016 Michal Srb <msrb@redhat.com> - 0:1.3.0-29.15
 - maven33 rebuild
 
