@@ -34,7 +34,7 @@
 
 Name:           %{?scl_prefix}%{pkg_name}
 Version:        1.3.0
-Release:        29.16%{?dist}
+Release:        29.17%{?dist}
 Epoch:          0
 Summary:        Lightweight Scripting for Java
 License:        (SPL or LGPLv2+) and Public Domain
@@ -231,6 +231,9 @@ cat scripts/bshdoc.bsh >> $RPM_BUILD_ROOT%{_bindir}/%{pkg_name}doc
 %attr(0755,root,root) %{_bindir}/%{pkg_name}*
 
 %changelog
+* Mon Feb 08 2016 Michal Srb <msrb@redhat.com> - 0:1.3.0-29.17
+- Fix BR on maven-local & co.
+
 * Mon Jan 11 2016 Michal Srb <msrb@redhat.com> - 0:1.3.0-29.16
 - maven33 rebuild #2
 
