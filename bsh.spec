@@ -36,7 +36,7 @@
 
 Name:           %{?scl_prefix}bsh
 Version:        2.0
-Release:        6.%{reltag}.1%{?dist}
+Release:        6.%{reltag}.2%{?dist}
 Epoch:          0
 Summary:        Lightweight Scripting for Java
 URL:            http://www.beanshell.org/
@@ -167,6 +167,9 @@ cat scripts/bshdoc.bsh >> %{buildroot}%{_bindir}/bshdoc
 %license LICENSE NOTICE
 
 %changelog
+* Thu Jun 22 2017 Michael Simacek <msimacek@redhat.com> - 0:2.0-6.b6.2
+- Mass rebuild 2017-06-22
+
 * Wed Jun 21 2017 Java Maintainers <java-maint@redhat.com> - 0:2.0-6.b6.1%{?dist}
 - Automated package import and SCL-ization
 
